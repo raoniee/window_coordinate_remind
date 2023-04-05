@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window_coordinate</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+    }
+
+    .orange_box {
+        background-color: orange;
+    }
+</style>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="orange_box"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        const orangeBox = document.querySelector(".orange_box");
+        function onClickBox(event) {
+            const rect = orangeBox.getBoundingClientRect();
+            console.log(rect);
+            console.log(`client: ${event.clientX}, ${event.clientY}`);
+            console.log(`page: ${event.pageX}, ${event.pageY}`);
+        }
+
+        orangeBox.addEventListener("click", onClickBox);
+
+    </script>
+</body>
+
+</html>
